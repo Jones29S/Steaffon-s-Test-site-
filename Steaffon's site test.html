@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DATA WITH F&F - Portfolio</title>
+    <!-- Tailwind CSS CDN for responsive design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter for a clean, modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom CSS for variables and default styles */
+        :root {
+            --primary-bg-color: #1a202c; /* Dark background */
+            --secondary-bg-color: #2d3748; /* Slightly lighter dark */
+            --text-color: #e2e8f0; /* Light gray text */
+            --accent-color: #63b3ed; /* Blue accent */
+            --font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--primary-bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        /* Smooth scrolling for navigation */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom styles for buttons and forms */
+        .btn-primary {
+            @apply bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out;
+        }
+
+        .input-field {
+            @apply w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500;
+        }
+
+        /* Styles for project cards */
+        .project-card {
+            @apply bg-gray-800 rounded-lg shadow-lg overflow-hidden flex flex-col;
+        }
+
+        .project-card img, .project-card video {
+            @apply w-full h-48 object-cover; /* Fixed height for image/video preview */
+        }
+
+        .project-card-content {
+            @apply p-6 flex-grow;
+        }
+
+        .project-card h3 {
+            @apply text-xl font-semibold text-blue-300 mb-2;
+        }
+
+        .project-card p {
+            @apply text-gray-300 text-sm;
+        }
+
+        /* Responsive video embedding */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 0.5rem; /* rounded-lg */
+        }
+
+        .video-container iframe,
+        .video-container object,
+        .video-container embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+
+    <!-- Header and Navigation -->
+    <header class="bg-gray-800 shadow-md py-4 sticky top-0 z-50">
+        <div class="container flex justify-between items-center">
+            <h1 class="text-3xl font-bold text-blue-400">DATA WITH F&F</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#home" class="hover:text-blue-400 transition duration-300">Home</a></li>
+                    <li><a href="#projects" class="hover:text-blue-400 transition duration-300">Projects</a></li>
+                    <li><a href="#about" class="hover:text-blue-400 transition duration-300">About Me</a></li>
+                    <li><a href="#services" class="hover:text-blue-400 transition duration-300">Services</a></li>
+                    <li><a href="#contact" class="hover:text-blue-400 transition duration-300">Contact</a></li>
+                    <li><a href="#customize" class="hover:text-blue-400 transition duration-300">Customize</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('https://placehold.co/1920x1080/1a202c/e2e8f0?text=Your+Awesome+Background+Image');">
+        <div class="text-center bg-black bg-opacity-60 p-10 rounded-lg shadow-xl">
+            <h2 class="text-5xl font-extrabold text-white mb-4">Welcome to DATA WITH F&F</h2>
+            <p class="text-xl text-gray-200 mb-8">Your trusted partner for data solutions and insights.</p>
+            <a href="#projects" class="btn-primary text-lg">View My Work</a>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-16 bg-gray-800">
+        <div class="container">
+            <h2 class="text-4xl font-bold text-center text-blue-400 mb-10">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/3">
+                    <!-- Placeholder for your profile picture -->
+                    <img src="https://placehold.co/300x300/63b3ed/ffffff?text=Your+Photo" alt="Your Photo" class="rounded-full w-48 h-48 object-cover mx-auto shadow-lg">
+                </div>
+                <div class="md:w-2/3 text-lg text-gray-300">
+                    <p class="mb-4">Hello! I'm [Your Name], the founder of DATA WITH F&F. I specialize in [Your Specialization, e.g., data analysis, web development, machine learning]. My passion lies in transforming complex data into actionable insights and building robust, user-friendly digital solutions.</p>
+                    <p class="mb-4">This very portfolio site was crafted with precision and care using **Visual Studio Code**, my go-to integrated development environment. VS Code's powerful features, extensive extensions, and intuitive interface allowed me to efficiently write, debug, and manage the HTML, CSS (with Tailwind CSS), and JavaScript that brings this site to life. It's a testament to how modern development tools empower creators to build amazing things!</p>
+                    <p>I am committed to delivering high-quality results and constantly learning new technologies to stay at the forefront of the industry. Let's connect and discuss how DATA WITH F&F can help you achieve your goals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-gray-900">
+        <div class="container">
+            <h2 class="text-4xl font-bold text-center text-blue-400 mb-10">My Projects</h2>
+            <p class="text-center text-gray-300 mb-8">Here you can showcase your projects. To add a new project, simply copy and paste one of the `project-card` blocks below, fill in your details, and add your image/video.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 Placeholder -->
+                <div class="project-card">
+                    <!-- Placeholder for project image or video -->
+                    <img src="https://placehold.co/600x400/2d3748/e2e8f0?text=Project+Image+1" alt="Project 1 Image">
+                    <div class="project-card-content">
+                        <h3>Project Title One</h3>
+                        <p class="description-box">This is a detailed description of Project One. Here you can explain the problem it solves, the technologies used (e.g., Python, SQL, Tableau), your role in the project, and the key outcomes. Highlight any challenges faced and how you overcame them. This project focused on [specific area, e.g., predictive modeling for sales data].</p>
+                        <a href="https://github.com/yourusername/project1" target="_blank" class="text-blue-400 hover:underline mt-4 inline-block">View Project on GitHub</a>
+                        <!-- Example of an external link to a live demo or report -->
+                        <a href="https://yourproject1livedemo.com" target="_blank" class="text-blue-400 hover:underline ml-4 mt-4 inline-block">Live Demo</a>
+                    </div>
+                </div>
+
+                <!-- Project 2 Placeholder -->
+                <div class="project-card">
+                    <!-- Placeholder for project image or video -->
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>Project Title Two (Video Demo)</h3>
+                        <p class="description-box">This project involved [brief description, e.g., building a data visualization dashboard]. The video above provides a quick demonstration of its key features and user interface. I utilized [languages/tools, e.g., JavaScript, D3.js, HTML/CSS] to create an interactive experience. This project showcases my skills in [relevant skill].</p>
+                        <a href="https://github.com/yourusername/project2" target="_blank" class="text-blue-400 hover:underline mt-4 inline-block">View Project on GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 3 Placeholder -->
+                <div class="project-card">
+                    <img src="https://placehold.co/600x400/2d3748/e2e8f0?text=Project+Image+3" alt="Project 3 Image">
+                    <div class="project-card-content">
+                        <h3>Project Title Three</h3>
+                        <p class="description-box">Description for Project Three. This could be a data science case study, a web application, or a research project. Detail your methodology, the datasets used, and the insights gained. Mention any specific algorithms or frameworks applied. This project demonstrated my ability to [specific skill, e.g., perform complex statistical analysis].</p>
+                        <a href="https://yourproject3report.pdf" target="_blank" class="text-blue-400 hover:underline mt-4 inline-block">Read Full Report</a>
+                    </div>
+                </div>
+
+                <!-- Add more project-card blocks here as needed -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services & Pricing Section -->
+    <section id="services" class="py-16 bg-gray-800">
+        <div class="container">
+            <h2 class="text-4xl font-bold text-center text-blue-400 mb-10">Services & Pricing</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-gray-300">
+                <!-- Service Card 1 -->
+                <div class="bg-gray-700 p-8 rounded-lg shadow-lg flex flex-col items-center text-center">
+                    <h3 class="text-2xl font-semibold text-blue-300 mb-4">Data Analysis & Reporting</h3>
+                    <p class="mb-4">Transform raw data into clear, actionable insights with comprehensive reports and visualizations.</p>
+                    <ul class="list-disc list-inside mb-6 text-left">
+                        <li>Exploratory Data Analysis</li>
+                        <li>Statistical Modeling</li>
+                        <li>Dashboard Creation (Tableau, Power BI)</li>
+                    </ul>
+                    <p class="text-3xl font-bold text-white mb-4">Starting at $500</p>
+                    <a href="#contact" class="btn-primary">Inquire Now</a>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="bg-gray-700 p-8 rounded-lg shadow-lg flex flex-col items-center text-center">
+                    <h3 class="text-2xl font-semibold text-blue-300 mb-4">Web Development (Static Sites)</h3>
+                    <p class="mb-4">Build fast, secure, and responsive static websites for your business or personal brand.</p>
+                    <ul class="list-disc list-inside mb-6 text-left">
+                        <li>Custom HTML/CSS/JS</li>
+                        <li>Responsive Design</li>
+                        <li>Performance Optimization</li>
+                    </ul>
+                    <p class="text-3xl font-bold text-white mb-4">Starting at $800</p>
+                    <a href="#contact" class="btn-primary">Inquire Now</a>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="bg-gray-700 p-8 rounded-lg shadow-lg flex flex-col items-center text-center">
+                    <h3 class="text-2xl font-semibold text-blue-300 mb-4">Consultation & Strategy</h3>
+                    <p class="mb-4">Expert guidance to help you define your data strategy and project roadmap.</p>
+                    <ul class="list-disc list-inside mb-6 text-left">
+                        <li>Project Scoping & Planning</li>
+                        <li>Technology Stack Recommendations</li>
+                        <li>Data Governance Advice</li>
+                    </ul>
+                    <p class="text-3xl font-bold text-white mb-4">$150/hour</p>
+                    <a href="#contact" class="btn-primary">Book a Session</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos" class="py-16 bg-gray-900">
+        <div class="container">
+            <h2 class="text-4xl font-bold text-center text-blue-400 mb-10">Videos & Tutorials</h2>
+            <p class="text-center text-gray-300 mb-8">Here you can embed videos from YouTube, Vimeo, or other platforms to showcase your work, tutorials, or presentations. Replace the `src` attribute with your video's embed URL.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="video-container">
+                    <!-- Replace with your YouTube embed URL -->
+                    <iframe src="https://www.youtube.com/embed/your-video-id-1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <!-- Replace with your YouTube embed URL -->
+                    <iframe src="https://www.youtube.com/embed/your-video-id-2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Language Connections & External Links -->
+    <section id="connections" class="py-16 bg-gray-800">
+        <div class="container">
+            <h2 class="text-4xl font-bold text-center text-blue-400 mb-10">My Ecosystem & Connections</h2>
+            <p class="text-center text-gray-300 mb-8">I leverage a variety of tools and languages to bring projects to life. Connect with me on these platforms or explore my work:</p>
+            <div class="flex flex-wrap justify-center gap-8">
+                <!-- GitHub -->
+                <a href="https://github.com/yourusername" target="_blank" class="flex flex-col items-center p-4 bg-gray-700 rounded-lg shadow-md hover:bg-gray-600 transition duration-300">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/github.svg" alt="GitHub" class="w-12 h-12 mb-2 filter invert">
+                    <span class="text-blue-300 font-semibold">GitHub</span>
+                </a>
+                <!-- Anaconda -->
+                <a href="https://anaconda.cloud/yourusername" target="_blank" class="flex flex-col items-center p-4 bg-gray-700 rounded-lg shadow-md hover:bg-gray-600 transition duration-300">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/anaconda.svg" alt="Anaconda" class="w-12 h-12 mb-2 filter invert">
+                    <span class="text-blue-300 font-semibold">Anaconda</span>
+                </a>
+                <!-- JavaScript (Conceptual Link) -->
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" class="flex flex-col items-center p-4 bg-gray-700 rounded-lg shadow-md hover:bg-gray-600 transition duration-300">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/javascript.svg" alt="JavaScript" class="w-12 h-12 mb-2">
+                    <span class="text-blue-300 font-semibold">JavaScript</span>
+                </a>
+                <!-- Python -->
+                <a href="https://www.python.org/" target="_blank" class="flex flex-col items-center p-4 bg-gray-700 rounded-lg shadow-md hover:bg-gray-600 transition duration-300">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/python.svg" alt="Python" class="w-12 h-12 mb-2">
+                    <span class="text-blue-300 font-semibold">Python</span>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/in/yourprofile" target="_blank" class="flex flex-col items-center p-4 bg-gray-700 rounded-lg shadow-md hover:bg-gray-600 transition duration-300">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/linkedin.svg" alt="LinkedIn" class="w-12 h-12 mb-2">
+                    <span class="text-blue-300 font-semibold">LinkedIn</span>
+                </a>
+                <!-- Other relevant tools/languages -->
+                <a href="https://www.r-project.org/" target="_blank" class="flex flex-col items-center p-4 bg-gray-700 rounded-lg shadow-md hover:bg-gray-600 transition duration-300">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/r.svg" alt="R Language" class="w-12 h-12 mb-2">
+                    <span class="text-blue-300 font-semibold">R Language</span>
+                </a>
+                <a href="https://www.mysql.com/" target="_blank" class="flex flex-col items-center p-4 bg-gray-700 rounded-lg shadow-md hover:bg-gray-600 transition duration-300">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/mysql.svg" alt="MySQL" class="w-12 h-12 mb-2 filter invert">
+                    <span class="text-blue-300 font-semibold">MySQL</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-900">
+        <div class="container">
+            <h2 class="text-4xl font-bold text-center text-blue-400 mb-10">Contact Me & Service Intake</h2>
+
+            <div class="flex flex-col md:flex-row gap-12">
+                <!-- Contact Information -->
+                <div class="md:w-1/2 bg-gray-800 p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold text-blue-300 mb-4">Get in Touch</h3>
+                    <p class="text-gray-300 mb-4">Feel free to reach out to me directly for collaborations, inquiries, or just to say hello!</p>
+                    <ul class="space-y-3 text-gray-300">
+                        <li><strong>Email:</strong> <a href="mailto:your.email@example.com" class="text-blue-400 hover:underline">your.email@example.com</a></li>
+                        <li><strong>Phone:</strong> <a href="tel:+1234567890" class="text-blue-400 hover:underline">+1 (234) 567-890</a> (Optional)</li>
+                        <li><strong>Location:</strong> Your City, Your Country (Optional)</li>
+                        <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/yourprofile" target="_blank" class="text-blue-400 hover:underline">linkedin.com/in/yourprofile</a></li>
+                        <!-- Add other social media links as needed -->
+                    </ul>
+                </div>
+
+                <!-- Intake Form -->
+                <div class="md:w-1/2 bg-gray-800 p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold text-blue-300 mb-4">Service Inquiry Form</h3>
+                    <p class="text-gray-300 mb-6">Please fill out the form below to inquire about my services. I'll get back to you as soon as possible!</p>
+                    <form action="#" method="POST" class="space-y-4">
+                        <!--
+                            IMPORTANT SECURITY NOTE:
+                            For a real working form that sends data, you would need a backend server (e.g., Node.js, Python Flask, PHP)
+                            or a third-party form service (e.g., Formspree, Netlify Forms, Getform.io) to process submissions.
+                            This HTML form is client-side only and will not send data without a backend.
+                            For static site hosting like GoDaddy, consider using a form submission service.
+                        -->
+                        <div>
+                            <label for="name" class="block text-gray-300 text-sm font-bold mb-2">Your Name:</label>
+                            <input type="text" id="name" name="name" required class="input-field" placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-300 text-sm font-bold mb-2">Your Email:</label>
+                            <input type="email" id="email" name="email" required class="input-field" placeholder="john.doe@example.com">
+                        </div>
+                        <div>
+                            <label for="service" class="block text-gray-300 text-sm font-bold mb-2">Interested Service:</label>
+                            <select id="service" name="service" class="input-field">
+                                <option value="">-- Select a Service --</option>
+                                <option value="data_analysis">Data Analysis & Reporting</option>
+                                <option value="web_dev">Web Development (Static Sites)</option>
+                                <option value="consultation">Consultation & Strategy</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-300 text-sm font-bold mb-2">Your Message:</label>
+                            <textarea id="message" name="message" rows="5" required class="input-field" placeholder="Tell me about your project or needs..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary w-full">Send Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customization Section -->
+    <section id="customize" class="py-16 bg-gray-800">
+        <div class="container">
+            <h2 class="text-4xl font-bold text-center text-blue-400 mb-10">Customize Your Site</h2>
+            <p class="text-center text-gray-300 mb-8">Experiment with different looks for your portfolio!</p>
+
+            <div class="bg-gray-700 p-8 rounded-lg shadow-lg max-w-2xl mx-auto space-y-6">
+                <!-- Text Color -->
+                <div>
+                    <label for="textColorPicker" class="block text-gray-300 text-sm font-bold mb-2">Choose Text Color:</label>
+                    <input type="color" id="textColorPicker" value="#e2e8f0" class="w-full h-10 rounded-lg cursor-pointer">
+                </div>
+
+                <!-- Background Color -->
+                <div>
+                    <label for="bgColorPicker" class="block text-gray-300 text-sm font-bold mb-2">Choose Main Background Color:</label>
+                    <input type="color" id="bgColorPicker" value="#1a202c" class="w-full h-10 rounded-lg cursor-pointer">
+                </div>
+
+                <!-- Accent Color -->
+                <div>
+                    <label for="accentColorPicker" class="block text-gray-300 text-sm font-bold mb-2">Choose Accent Color (e.g., links, titles):</label>
+                    <input type="color" id="accentColorPicker" value="#63b3ed" class="w-full h-10 rounded-lg cursor-pointer">
+                </div>
+
+                <!-- Font Family -->
+                <div>
+                    <label for="fontFamilySelect" class="block text-gray-300 text-sm font-bold mb-2">Choose Font Family:</label>
+                    <select id="fontFamilySelect" class="input-field">
+                        <option value="Inter, sans-serif">Inter (Default)</option>
+                        <option value="Roboto, sans-serif">Roboto</option>
+                        <option value="Open Sans, sans-serif">Open Sans</option>
+                        <option value="Lato, sans-serif">Lato</option>
+                        <option value="Montserrat, sans-serif">Montserrat</option>
+                        <option value="Merriweather, serif">Merriweather (Serif)</option>
+                    </select>
+                </div>
+
+                <!-- Background Image URL -->
+                <div>
+                    <label for="bgImageUrl" class="block text-gray-300 text-sm font-bold mb-2">Background Image URL (for Hero Section):</label>
+                    <input type="text" id="bgImageUrl" placeholder="e.g., https://example.com/your-image.jpg" class="input-field">
+                    <button id="applyBgImage" class="btn-primary mt-2">Apply Image</button>
+                    <button id="clearBgImage" class="btn-primary mt-2 ml-2 bg-red-500 hover:bg-red-600">Clear Image</button>
+                </div>
+
+                <div class="mt-6 text-center">
+                    <button id="resetStyles" class="btn-primary bg-gray-500 hover:bg-gray-600">Reset to Default Styles</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-8 text-center text-gray-500 text-sm">
+        <div class="container">
+            <p>&copy; <span id="currentYear"></span> DATA WITH F&F. All rights reserved.</p>
+            <p>Built with <span class="text-red-500">&hearts;</span> and Visual Studio Code.</p>
+            <!-- Basic Security Note for Static Sites -->
+            <p class="mt-4 text-xs">Note: This is a static HTML site. For secure form submissions and advanced features, a backend server or a third-party service is required.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for customization options and dynamic elements
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set current year in footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+            // Get elements for customization
+            const root = document.documentElement; // Represents the <html> element
+            const body = document.body;
+            const heroSection = document.getElementById('home');
+
+            const textColorPicker = document.getElementById('textColorPicker');
+            const bgColorPicker = document.getElementById('bgColorPicker');
+            const accentColorPicker = document.getElementById('accentColorPicker');
+            const fontFamilySelect = document.getElementById('fontFamilySelect');
+            const bgImageUrlInput = document.getElementById('bgImageUrl');
+            const applyBgImageBtn = document.getElementById('applyBgImage');
+            const clearBgImageBtn = document.getElementById('clearBgImage');
+            const resetStylesBtn = document.getElementById('resetStyles');
+
+            // Store default values
+            const defaultStyles = {
+                textColor: getComputedStyle(root).getPropertyValue('--text-color').trim(),
+                primaryBgColor: getComputedStyle(root).getPropertyValue('--primary-bg-color').trim(),
+                accentColor: getComputedStyle(root).getPropertyValue('--accent-color').trim(),
+                fontFamily: getComputedStyle(root).getPropertyValue('--font-family').trim(),
+                heroBgImage: heroSection.style.backgroundImage
+            };
+
+            // Apply initial values to controls
+            textColorPicker.value = defaultStyles.textColor;
+            bgColorPicker.value = defaultStyles.primaryBgColor;
+            accentColorPicker.value = defaultStyles.accentColor;
+            fontFamilySelect.value = defaultStyles.fontFamily.split(',')[0].trim(); // Select first font in stack
+
+            // Event Listeners for customization
+            textColorPicker.addEventListener('input', (event) => {
+                root.style.setProperty('--text-color', event.target.value);
+            });
+
+            bgColorPicker.addEventListener('input', (event) => {
+                root.style.setProperty('--primary-bg-color', event.target.value);
+                body.style.backgroundColor = event.target.value; // Directly apply to body for immediate effect
+            });
+
+            accentColorPicker.addEventListener('input', (event) => {
+                root.style.setProperty('--accent-color', event.target.value);
+                // Also update specific elements that use accent color directly if not covered by var
+                document.querySelectorAll('h1, h2, h3, .hover\\:text-blue-400').forEach(el => {
+                    if (el.matches('h1, h2, h3')) {
+                        el.style.color = event.target.value;
+                    } else if (el.tagName === 'A') {
+                        // For navigation links, we rely on Tailwind's hover, but for consistency,
+                        // this ensures current state also reflects accent.
+                        el.style.color = event.target.value;
+                    }
+                });
+            });
+
+            fontFamilySelect.addEventListener('change', (event) => {
+                root.style.setProperty('--font-family', event.target.value);
+            });
+
+            applyBgImageBtn.addEventListener('click', () => {
+                const imageUrl = bgImageUrlInput.value.trim();
+                if (imageUrl) {
+                    // Basic image validation (optional, but good practice)
+                    const img = new Image();
+                    img.onload = () => {
+                        heroSection.style.backgroundImage = `url('${imageUrl}')`;
+                        heroSection.style.backgroundSize = 'cover';
+                        heroSection.style.backgroundPosition = 'center';
+                    };
+                    img.onerror = () => {
+                        alert('Invalid image URL or unable to load image. Please check the URL.');
+                        bgImageUrlInput.value = ''; // Clear input on error
+                    };
+                    img.src = imageUrl;
+                } else {
+                    alert('Please enter a valid image URL.');
+                }
+            });
+
+            clearBgImageBtn.addEventListener('click', () => {
+                heroSection.style.backgroundImage = 'none';
+                bgImageUrlInput.value = '';
+            });
+
+            resetStylesBtn.addEventListener('click', () => {
+                // Reset CSS variables
+                root.style.setProperty('--primary-bg-color', defaultStyles.primaryBgColor);
+                root.style.setProperty('--secondary-bg-color', '#2d3748'); // Fixed secondary color
+                root.style.setProperty('--text-color', defaultStyles.textColor);
+                root.style.setProperty('--accent-color', defaultStyles.accentColor);
+                root.style.setProperty('--font-family', defaultStyles.fontFamily);
+
+                // Reset specific element styles that were directly manipulated
+                body.style.backgroundColor = defaultStyles.primaryBgColor;
+                document.querySelectorAll('h1, h2, h3, .hover\\:text-blue-400').forEach(el => {
+                    el.style.color = ''; // Clear inline style to let Tailwind/CSS variables take over
+                });
+
+                // Reset hero background image
+                heroSection.style.backgroundImage = defaultStyles.heroBgImage;
+                heroSection.style.backgroundSize = 'cover';
+                heroSection.style.backgroundPosition = 'center';
+
+                // Reset input fields to default values
+                textColorPicker.value = defaultStyles.textColor;
+                bgColorPicker.value = defaultStyles.primaryBgColor;
+accentColorPicker.value = defaultStyles.accentColor;
+                fontFamilySelect.value = defaultStyles.fontFamily.split(',')[0].trim();
+                bgImageUrlInput.value = ''; // Clear image URL input
+            });
+        });
+    </script>
+</body>
+</html>
